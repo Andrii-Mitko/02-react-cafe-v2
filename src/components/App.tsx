@@ -1,3 +1,5 @@
+import Alert from "./Alert";
+import Button from "./Button";
 import Product from "./Product";
 
 export default function App() {
@@ -14,6 +16,11 @@ export default function App() {
         imgUrl="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?w=640"
         price={14.29}
       />
+      <Alert />
+      <Alert type="success" />
+      <Alert type="error" />
+      <Button variant="primary" text="Login" />
+      <Button variant="secondary" text="Follow" />
     </>
   );
 }
