@@ -3,6 +3,10 @@ import Button from "./Button";
 import Product from "./Product";
 
 export default function App() {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    console.log("Clicked!", event);
+    console.log("Target:", event.target); // сам <button>
+  };
   return (
     <>
       <h1>Best selling</h1>
@@ -21,6 +25,7 @@ export default function App() {
       <Alert type="error" />
       <Button variant="primary" text="Login" />
       <Button variant="secondary" text="Follow" />
+      <button onClick={handleClick}>Click me!</button>
     </>
   );
 }
