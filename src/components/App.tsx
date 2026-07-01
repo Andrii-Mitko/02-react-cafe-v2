@@ -1,11 +1,14 @@
+import { useState } from "react";
 import Alert from "./Alert";
 import Button from "./Button";
 import Product from "./Product";
 
 export default function App() {
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("Clicked!", event);
-    console.log("Target:", event.target); // сам <button>
+  const [clicks, setClicks] = useState(0);
+
+  const handleClick = () => {
+    //  Використовуємо setClicks для зміни стану clicks
+    setClicks(clicks + 1);
   };
   return (
     <>
@@ -25,7 +28,7 @@ export default function App() {
       <Alert type="error" />
       <Button variant="primary" text="Login" />
       <Button variant="secondary" text="Follow" />
-      <button onClick={handleClick}>Click me!</button>
+      <button onClick={handleClick}>Current: {clicks}</button>;
     </>
   );
 }
